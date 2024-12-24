@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Need exactly one argument
+if [ "$#" -ne 1 ]; then
+    echo "Error: Please provide one argument (4-digit integer) to proceed."
+    exit 1
+fi
+
+echo -n "$1" | sha256sum | awk '{print $1}'
